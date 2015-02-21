@@ -4,16 +4,18 @@
   * Homework 4
   * Written by : Naeem Khoshnevis (nkhshnvs@memphis.edu)
   * Feb 21 , 2015 
+  * https://github.com/Naeemkh/ProgTools-HMWRK4.git
   */
     
  
- #include <iostrim> 
+ #include <iostream> 
 
 
-
+ using namespace std;
 
  int main() {
-
+ 
+  cout << "I was able to compile this code using the HPC at the University of Memphis. When I compiled it there, it did not produce any warning message. The HPC uses a GNU C++ compiler that can be considered a good up-to-date standard. I also version-controlled this code using git, and used a remote repository hosted by github. If I can do this, so can you!!!"<< "\n";
 
  return 0;
  }
