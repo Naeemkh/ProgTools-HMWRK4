@@ -12,6 +12,8 @@
  #include <iostream>
  #include <string>
  #include <iomanip>
+ #include <sstream>
+ #include <cstdlib>
 
  using namespace std;
 
@@ -47,11 +49,15 @@ void open_output(ofstream&, ofstream&, string);
      string par_2 = "I am so cool, that I was also able to write a code that produces the first ";
      string par_3 = " numbers of the Fibonacci sequence. Here they are: ";
      
+     ostringstream os1;
+     os1 << M;
+     string ss = os1.str();     
+     
      print_output(outputfile, cout, "\n");
      print_output(outputfile, cout, par_1);
      print_output(outputfile, cout, "\n\n");
      print_output(outputfile, cout, par_2);
-     print_output(outputfile, cout, to_string(M));
+     print_output(outputfile, cout, ss);
      print_output(outputfile, cout, par_3);
      print_output(outputfile, cout, "\n\n");
      
@@ -70,9 +76,13 @@ void open_output(ofstream&, ofstream&, string);
      if (i%10 == 0) {
          print_output(outputfile, cout,  "\n");
      }
-         
-     Fp=to_string(F_3);
-     NC=Fp.size();
+     
+      
+     stringstream os2;
+     os2 << F_3;
+     string Fp = os2.str();
+
+     NC = Fp.size();
      print_output(outputfile, cout, Fp);
      BS = W - NC;
      
