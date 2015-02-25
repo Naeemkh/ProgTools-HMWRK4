@@ -18,10 +18,10 @@
 
  /***************************** function prototypes *************************************/
 
-void print_output(ofstream&, ostream&,  string);
-void open_input(ifstream&, ofstream&, string);
-void open_output(ofstream&, ofstream&, string);
-void open_output(ofstream&, string);
+ void print_output(ofstream&, ostream&,  string);
+ void open_input(ifstream&, ofstream&, string);
+ void open_output(ofstream&, ofstream&, string);
+ void open_output(ofstream&, string);
 
 /********************************* main function ****************************************/
 
@@ -31,7 +31,7 @@ void open_output(ofstream&, string);
      
      string Fp,Ns;
      
-     unsigned long long F_1=0, F_2=1, F_3;
+     unsigned long long int F_1=0, F_2=1, F_3;
   
      ifstream inputfile;
      ofstream outputfile;
@@ -42,8 +42,7 @@ void open_output(ofstream&, string);
      
      // read the from file.
      inputfile >> Ns;
-
-     
+          
      // convert the string to integer
      N = atoi(Ns.c_str());
      
@@ -67,6 +66,7 @@ void open_output(ofstream&, string);
                   " The HPC uses a GNU C++ compiler that can be considered a good up-to-date standard." 
                   " I also version-controlled this code using git, and used a remote repository hosted "  
                   "by github. If I can do this, so can you!!!";
+
      string par_2 = "I am so cool, that I was also able to write a code that produces the first ";
      string par_3 = " numbers of the Fibonacci sequence. Here they are: ";
      
@@ -82,8 +82,7 @@ void open_output(ofstream&, string);
      print_output(outputfile, cout, par_3);
      print_output(outputfile, cout, "\n\n");
      
-     // I came up with 5 through try and error.
-     
+     // I came up with the number 5 through try and error.
      W = (M/5+2);
      
      for (i = 0; i < M; i++) {
@@ -136,7 +135,7 @@ void print_output(ofstream & output1, ostream & output2, string string1) {
 void open_input(ifstream & inputfile, ofstream & errorfile, string inputfilename){
     
     inputfile.open(inputfilename.c_str());
-    if ( !inputfile.is_open() ) {
+    if (!inputfile.is_open()) {
         
         open_output(errorfile, "naeem.err");
         print_output(errorfile, cout,"Cannot open input file: ");
@@ -150,7 +149,7 @@ void open_input(ifstream & inputfile, ofstream & errorfile, string inputfilename
 void open_output(ofstream& outputfile,ofstream& errorfile, string outputfilename){
 
     outputfile.open(outputfilename.c_str());
-    if ( !outputfile.is_open() ) {
+    if (!outputfile.is_open()) {
         
         open_output(errorfile, "naeem.err");
         print_output(errorfile, cout,"Cannot open input file: ");
@@ -164,11 +163,10 @@ void open_output(ofstream& outputfile,ofstream& errorfile, string outputfilename
 void open_output(ofstream& errorfile, string errorfilename){
 
     errorfile.open(errorfilename.c_str());
-    if ( !errorfile.is_open() ) {
+    if (!errorfile.is_open()) {
  	
         cout << "Cannot open error file: " << errorfilename;
        
     }
 }
-
 
